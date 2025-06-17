@@ -7,11 +7,7 @@ class Pizza(db.Model):
     name = db.Column(db.String(50), nullable=False)
     ingredients = db.Column(db.String(200), nullable=False)
     
-   
     restaurant_pizzas = db.relationship('RestaurantPizza', backref='pizza')
-    
-    def __repr__(self):
-        return f'<Pizza {self.name}>'
     
     def to_dict(self):
         return {
